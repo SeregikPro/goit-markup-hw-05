@@ -550,6 +550,54 @@ img {
   color: var(--main-background-color);
 }
 
+/* --------------BACKDROP-------------- */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 300ms, visibility 300ms;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 528px;
+  min-height: 581px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  transition: opacity 300ms;
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* --------------PORTFOLIO-------------- */
 
 .filter-list {
@@ -651,9 +699,14 @@ img {
   letter-spacing: 0.03em;
   color: var(--third-text-color);
   background-color: rgba(33, 150, 243, 0.9);
-  padding: 63px 24px;
-  overflow: auto;
-  transform: translateY(100%);
+  /* padding: 63px 24px; */
+  padding-left: 24px;
+  padding-right: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: translateY(101%);
 }
 
 .portfolio-link:hover .portfolio-wrap-text,
